@@ -1,0 +1,17 @@
+<h1>All our Flats</h1>
+<p>All <%= Flat.count %> flats.</p>
+<% @flats.each do |flat| %>
+<div class= "card">
+<p><%= flat.name %></p>
+<p><%= flat.address %></p>
+<div class="flat-info">
+      <div class="price">
+        <p><i class="fas fa-euro-sign"></i><%= flat.price_per_night %></p>
+      </div>
+      <div class="guests">
+        <p><i class="fas fa-user-friends"></i><%= flat.number_of_guests %></p>
+      </div>
+    </div>
+</div>
+<% end %>
+<button type= "button btn-primary"> <%= link_to "Add Flat", new_flat_path %> </button>
